@@ -20,7 +20,9 @@
     <script>
         let countdown;
         let timeRemaining = 0;
-        const beepSound = new Audio('beep.mp3');
+        const beepSound = new Audio('beep-sound.mp3'); // Replace with your beep sound file
+        const finalBeepSound = new Audio('finalbeep.mp3'); // Replace with your final beep sound file
+        let beepCounter = 3;
 
         function startTimer(duration) {
             clearInterval(countdown);
@@ -31,21 +33,18 @@
                 if (timeRemaining > 0) {
                     timeRemaining--;
                     updateTimerDisplay();
-                    // Play the beep sound during the last 5 seconds
-                    if (timeRemaining <= 5) {
-                        beepSound.play();
+
+                    // Start the beep countdown from 4 to 0 during the last 5 seconds
+                    if (timeRemaining <= 3 && beepCounter >= 0) {
+                        if (beepCounter === 0) {
+                            finalBeepSound.play(); // Play the final beep sound when beepCounter reaches 0
+                        } else {
+                            beepSound.play(); // Play the beep sound
+                        }
+                        beepCounter--;
                     }
-                } else {
-                    clearInterval(countdown);
                 }
             }, 1000);
-
-            // Start beeping every second during the last 5 seconds
-            if (duration <= 5) {
-                beepInterval = setInterval(function () {
-                    beepSound.play();
-                }, 1000);
-            }
         }
 
         function updateTimerDisplay() {
@@ -68,24 +67,9 @@
         document.getElementById('btn120').addEventListener('click', () => startTimer(120));
         document.getElementById('resetBtn').addEventListener('click', () => {
             clearInterval(countdown);
-            if (timeRemaining === 0) {
-                // If the timer is not running, start it with the last selected duration
-                const lastDuration = parseInt(document.querySelector('button.active').getAttribute('data-duration'));
-                startTimer(lastDuration);
-            } else {
-                // If the timer is running, reset it
-                timeRemaining = 0;
-                updateTimerDisplay();
-            }
-        });
-
-        // Add a class to indicate the active button
-        const timerButtons = document.querySelectorAll('button[data-duration]');
-        timerButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                timerButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
+            beepCounter = 7; // Reset beepCounter
+            timeRemaining = 0;
+            updateTimerDisplay();
         });
 
     </script>
