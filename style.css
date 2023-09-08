@@ -50,7 +50,7 @@ button {
 }
 
 /* Media query for screens with a maximum width of 600px (typical mobile devices) */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .timer-button {
         font-size: 50px;
         padding: 8px 16px;
