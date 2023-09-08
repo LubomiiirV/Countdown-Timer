@@ -9,13 +9,27 @@
 </head>
 
 <body>
-    <h1>Timer</h1>
-    <p class="text">Set timer duration:</p>
-    <button id="btn120">120 seconds</button>
-    <button id="btn90">90 seconds</button>
-    <button id="btn60">60 seconds</button>
-    <button id="btn30">30 seconds</button>
-    <p id="timer"></p>
+
+    <div class="container">
+        <div class="section">
+            <h1>DAY 1</h1>
+            <img src="day1.jpg" alt="">
+        </div>
+        <div class="section">
+            <h1>DAY 2</h1>
+            <img src="day2.jpg" alt="">
+        </div>
+        <div class="section">
+            <h1>DAY 3</h1>
+            <img src="day3.jpg" alt="">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="btn120">120 seconds</button>
+        <button id="btn90">90 seconds</button>
+        <button id="btn60">60 seconds</button>
+    </div>
+    <p id="timer">0:00</p>
 
     <script>
         let countdown;
@@ -61,7 +75,6 @@
             }
         }
 
-        document.getElementById('btn30').addEventListener('click', () => startTimer(30));
         document.getElementById('btn60').addEventListener('click', () => startTimer(60));
         document.getElementById('btn90').addEventListener('click', () => startTimer(90));
         document.getElementById('btn120').addEventListener('click', () => startTimer(120));
