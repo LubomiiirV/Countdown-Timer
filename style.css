@@ -48,20 +48,3 @@ button {
     color: #e74c3c;
     font-size: 70px;
 }
-
-/* Media query for screens with a maximum width of 600px (typical mobile devices) */
-@media (max-width: 100px) {
-    .timer-button {
-        font-size: 50px;
-        padding: 8px 16px;
-    }
-
-    #timer {
-        font-size: 50px;
-    }
-
-    /* Mobile style for the timer during the last 5 seconds */
-    #timer.red-text {
-        font-size: 60px;
-    }
-}
