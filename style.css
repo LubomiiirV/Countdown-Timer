@@ -5,27 +5,46 @@
 }
 
 body {
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
     text-align: center;
 }
 
-h1 {
-    font-size: 70px;;
+/* Nastavení stylů pro kontejner */
+.container {
+    /* display: flex;  */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px; 
+}
+
+/* Nastavení stylů pro sekce */
+.section {
+    text-align: center;
+}
+
+/* Nastavení stylů pro tlačítka a odstavec */
+.buttons {
+    display: flex;
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+h1 p{
+    font-size: 5px;;
     margin-top: 20px;
 }
 
 p.text {
     font-size: 25px;
     margin: 10px;
-    
 }
 
 button {
     font-size: 18px;
     padding: 10px 20px;
-    margin: 30px auto; /* Center the buttons horizontally and add vertical margin */
-    display: block; /* Display buttons as block elements (one below the other) */
+    margin: 30px auto; 
+    display: block; 
     border: none;
     cursor: pointer;
     background-color: #ff0000;
@@ -47,4 +66,35 @@ button {
 #timer.red-text {
     color: #e74c3c;
     font-size: 70px;
+}
+
+/* Media query for screens with a maximum width of 600px (typical mobile devices) */
+@media (max-width: 600px) {
+    .container {
+        padding-bottom: 0;
+    }
+    button {
+        margin: 10 auto;
+    }
+    .buttons {
+        font-size: 50px;
+        display: block; /* Tlačítka budou zobrazena jako blokové elementy, jeden pod druhým */
+        width: 100%; /* Tlačítka budou plné šířky rodičovského kontejneru */
+        margin-bottom: 10px; /* Odsazení mezi tlačítky */
+    }
+
+    #timer {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    /* Mobile style for the timer during the last 5 seconds */
+    #timer.red-text {
+        font-size: 60px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto; /* Ujistěte se, že zachováte původní poměr stran obrázku */
+    }
 }
