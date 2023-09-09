@@ -28,7 +28,7 @@
         <button id="btn120">120 SECONDS</button>
         <button id="btn90">90 SECONDS</button>
         <button id="btn60">60 SECONDS</button>
-        <button id="btn60">30 SECONDS</button>
+        <button id="btn30">30 SECONDS</button>
     </div>
     <p id="timer">0:00</p>
 
@@ -76,6 +76,7 @@
             }
         }
 
+        document.getElementById('btn60').addEventListener('click', () => startTimer(30));
         document.getElementById('btn60').addEventListener('click', () => startTimer(60));
         document.getElementById('btn90').addEventListener('click', () => startTimer(90));
         document.getElementById('btn120').addEventListener('click', () => startTimer(120));
